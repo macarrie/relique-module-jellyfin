@@ -1,0 +1,17 @@
+name = "jellyfin"
+module_type = "jellyfin"
+backup_type = "diff"
+backup_paths = [
+    "/var/lib/jellyfin",
+    "/var/log/jellyfin",
+    "/etc/jellyfin",
+]
+
+# Stop jellyfin before backup
+pre_backup_script = "prebackup.sh"
+# Restart jellyfin after restore
+post_backup_script = "postbackup.sh"
+# Stop jellyfin before restore
+pre_restore_script = "prerestore.sh"
+# Restart jellyfin after restore
+post_restore_script = "postrestore.sh"
